@@ -1,0 +1,19 @@
+{
+    "name": "mkswp/pricing-plan",
+    "description": "Pricing Plan is a plugin for WordPress that allows you to create and manage pricing plans for your products and services.",
+    "type": "project",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Maruf Khan",
+            "email": "marufkh204@gmail.com"
+        }
+    ],
+    "config": {
+        "vendor-dir": "lib"
+    },
+    "require": {},
+    "autoload": {
+        "psr-4": {"Pricing_Plan\\": "./core"}
+    }
+}
