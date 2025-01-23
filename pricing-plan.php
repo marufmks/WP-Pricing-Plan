@@ -1,53 +1,53 @@
 <?php
 /**
- * Plugin Name:     Pricing Plan
- * Plugin URI:      https://www.github.com/marufmks
- * Description:     Pricing Plan is a plugin for WordPress that allows you to create and manage pricing plans for your products and services.
- * Author:          Maruf Khan
- * Author URI:      https://www.github.com/marufmks
- * Text Domain:     pricing-plan
- * Domain Path:     /languages
- * Version:         1.0.0
- *
- * @package mrkwp
+ * Plugin Name: Pricing Plan
+ * Plugin URI: https://github.com/pricing-plan
+ * Description: Create and manage beautiful pricing plans with an easy-to-use interface
+ * Version: 1.0.0
+ * Author: Maruf Khan
+ * Author URI: https://github.com/marufmks
+ * License: GPL v2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: pricing-plan
+ * Domain Path: /languages
+ * 
+ * @package Pricing_Plan
  */
 
-// If this file is called firectly, abort!!!
-defined( 'ABSPATH' ) or die( 'No Access!' );
+// If this file is called directly, abort.
+if (!defined('WPINC')) {
+    die;
+}
 
-// Define plugin version
-define( 'PRICING_PLAN_VERSION', '1.0.0' );
-define('PRICING_PLAN_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define('PRICING_PLAN_PLUGIN_PATH', plugin_dir_path( __FILE__ ));
-
-// Require once the Composer Autoload.
-if ( file_exists( PRICING_PLAN_PLUGIN_PATH . '/lib/autoload.php' ) ) {
-	require_once PRICING_PLAN_PLUGIN_PATH . '/lib/autoload.php';
+// Require once the Composer autoload
+if (file_exists(dirname(__FILE__) . '/lib/autoload.php')) {
+    require_once dirname(__FILE__) . '/lib/autoload.php';
 }
 
 /**
- * The code that runs during plugin activation.
- *
- * @return void
+ * Initialize all the core classes of the plugin
  */
-function activate_pricing_plan_plugin() {
-	Pricing_Plan\Base\Activate::activate();
+if (class_exists('Pricing_Plan\\Init')) {
+    Pricing_Plan\Init::init();
 }
-register_activation_hook( __FILE__, 'activate_pricing_plan_plugin' );
 
 /**
- * The code that runs during plugin deactivation.
- *
- * @return void
+ * Register activation and deactivation hooks
  */
-function deactivate_pricing_plan_plugin() {
-	Pricing_Plan\Base\Deactivate::deactivate();
-}
-register_deactivation_hook( __FILE__, 'deactivate_pricing_plan_plugin' );
+register_activation_hook(__FILE__, function() {
+	if (!class_exists('Pricing_Plan\Base\Activate')) {
+		Pricing_Plan\Base\Activate::activate();
+	}
+});
 
-/**
- * Initialize all the core classes of the plugin.
- */
-if ( class_exists( 'Pricing_Plan\\Init' ) ) {
-	Pricing_Plan\Init::register_services();
-}
+register_deactivation_hook(__FILE__, function() {
+	if (!class_exists('Pricing_Plan\Base\Deactivate')) {
+		Pricing_Plan\Base\Deactivate::deactivate();
+	}
+});
+
+register_uninstall_hook(__FILE__, function() {
+	if (!class_exists('Pricing_Plan\Base\Uninstall')) {
+		Pricing_Plan\Base\Uninstall::uninstall();
+	}
+});
