@@ -638,8 +638,7 @@
 }
 
 .pricing-plan-admin-wrapper .empty-plans svg {
-    color: #646970;
-    margin-bottom: 16px;
+    color: #fff;
 }
 
 .pricing-plan-admin-wrapper .empty-plans h2 {

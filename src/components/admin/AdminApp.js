@@ -4,7 +4,7 @@ import Sidebar from './Sidebar';
 import Dashboard from './Dashboard';
 import PlanList from './plans/PlanList';
 import PlanForm from './plans/PlanForm';
-import Settings from './Settings';
+import Settings from './settings/Settings';
 import './admin.css';
 
 const AdminApp = () => {

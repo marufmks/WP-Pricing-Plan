@@ -16,6 +16,7 @@ final class Init {
 		return [
 			Admin\AdminHooks::class,
 			Api\PricingPlanController::class,
+			Api\SettingsController::class,
 			// Add more service classes here
 		];
 	}

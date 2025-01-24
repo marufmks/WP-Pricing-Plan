@@ -1,0 +1,222 @@
+/* Settings Page Styles */
+.settings-container {
+    max-width: 900px;
+    margin: 2.5rem auto;
+    padding: 2.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.settings-header {
+    margin-bottom: 3rem;
+    text-align: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #f0f0f1;
+    position: relative;
+}
+
+.settings-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: #2271b1;
+}
+
+.settings-header h1 {
+    font-size: 28px;
+    color: #1d2327;
+    margin: 0 0 0.75rem 0;
+    font-weight: 600;
+}
+
+.settings-subtitle {
+    color: #646970;
+    margin: 0;
+    font-size: 15px;
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 50%;
+}
+
+.form-group.full-width {
+    width: 100%;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #1d2327;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    padding: 10px 14px;
+    border: 1px solid #dcdcde;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+    transition: all 0.2s ease;
+    background-color: #f8f9fa;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2271b1;
+    box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.1);
+    background-color: #fff;
+}
+
+.form-group textarea {
+    padding: 12px 16px;
+    border: 1px solid #dcdcde;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+    min-height: 200px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+    line-height: 1.5;
+    resize: vertical;
+    background-color: #f8f9fa;
+    transition: all 0.2s ease;
+}
+
+.checkbox-group {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: #f8f9fa;
+    border: 1px solid #dcdcde;
+    transition: all 0.2s ease;
+    width: fit-content;
+}
+
+.checkbox-label:hover {
+    background: #f0f0f1;
+}
+
+.checkbox-label svg {
+    width: 16px;
+    height: 16px;
+    color: #2271b1;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.save-settings-btn {
+    background: #2271b1;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    align-self: center;
+    min-width: 200px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(34, 113, 177, 0.2);
+}
+
+.save-settings-btn:hover {
+    background: #135e96;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(34, 113, 177, 0.25);
+}
+
+.save-settings-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(34, 113, 177, 0.2);
+}
+
+.save-settings-btn:disabled {
+    background: #a7aaad;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.settings-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    gap: 1.5rem;
+}
+
+.loading-spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #2271b1;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    animation: spin 1s linear infinite;
+}
+
+.settings-loading p {
+    color: #646970;
+    font-size: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 782px) {
+    .settings-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .save-settings-btn {
+        width: 100%;
+    }
+} 
