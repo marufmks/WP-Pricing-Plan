@@ -40,6 +40,15 @@ final class Init {
 		// Define plugin constants
 		self::define_constants();
 		
+		// Load plugin textdomain
+		add_action('plugins_loaded', function() {
+			load_plugin_textdomain(
+				'pricing-plan',
+				false,
+				dirname(plugin_basename(PRICING_PLAN_PLUGIN_PATH)) . '/languages'
+			);
+		});
+		
 		// Register services
 		self::register_services();
 	}
