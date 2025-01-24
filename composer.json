@@ -9,10 +9,20 @@
             "email": "marufkh204@gmail.com"
         }
     ],
-    "config": {
-        "vendor-dir": "lib"
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^3.1.0",
+        "phpcompatibility/phpcompatibility-wp": "^2.1.6"
     },
-    "require": {},
+    "scripts": {
+        "lint":"phpcs",
+        "lint:fix":"phpcbf"
+    },
+    "config": {
+        "vendor-dir": "lib",
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
     "autoload": {
         "psr-4": {"Pricing_Plan\\": "./core"}
     }

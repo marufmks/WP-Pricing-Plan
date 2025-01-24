@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Pricing Plan Plugin">
+    <description>A custom set of rules to check for the Pricing Plan WordPress plugin</description>
+
+    <!-- Exclude the Composer Vendor directory. -->
+    <exclude-pattern>/vendor/*</exclude-pattern>
+
+    <!-- Exclude the Node Modules directory. -->
+    <exclude-pattern>/node_modules/*</exclude-pattern>
+
+    <!-- Exclude minified files. -->
+    <exclude-pattern>*.min.css</exclude-pattern>
+    <exclude-pattern>*.min.js</exclude-pattern>
+
+    <!-- Exclude build directory. -->
+    <exclude-pattern>/build/*</exclude-pattern>
+
+    <!-- Include WordPress standards -->
+    <rule ref="WordPress">
+        <!-- Allow short array syntax -->
+        <exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
+    </rule>
+
+    <!-- Include WordPress security standards -->
+    <rule ref="WordPress-Extra"/>
+    <rule ref="WordPress-Docs"/>
+
+    <!-- Let's also check that everything is properly documented. -->
+    <rule ref="Generic.Commenting"/>
+
+    <!-- Add in some extra rules -->
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+    <rule ref="Generic.Commenting.Todo"/>
+
+    <!-- Check for PHP cross-version compatibility. -->
+    <config name="testVersion" value="7.4-"/>
+    <rule ref="PHPCompatibilityWP"/>
+
+    <!-- Verify that the text_domain is set to the desired text-domain. -->
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array" value="pricing-plan"/>
+        </properties>
+    </rule>
+
+    <!-- Set minimum WP version for deprecated functions -->
+    <config name="minimum_supported_wp_version" value="5.8"/>
+
+    <!-- Show sniff codes in all reports -->
+    <arg value="ps"/>
+    <arg name="colors"/>
+
+    <!-- Check all PHP files in directory tree by default. -->
+    <arg name="extensions" value="php"/>
+    <file>.</file>
+
+    <!-- Exclude WordPress Core files. -->
+    <exclude-pattern>/wp-admin/*</exclude-pattern>
+    <exclude-pattern>/wp-includes/*</exclude-pattern>
+    <exclude-pattern>/wp-*.php</exclude-pattern>
+    <exclude-pattern>/index.php</exclude-pattern>
+    <exclude-pattern>/xmlrpc.php</exclude-pattern>
+    <exclude-pattern>/wp-content/plugins/*</exclude-pattern>
+    <exclude-pattern>/wp-content/themes/*</exclude-pattern>
+
+    <!-- Directories and third party library exclusions. -->
+    <exclude-pattern>/languages/*</exclude-pattern>
+    <exclude-pattern>/assets/*</exclude-pattern>
+    <exclude-pattern>/src/*</exclude-pattern>
+</ruleset>
