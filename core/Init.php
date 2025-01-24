@@ -15,6 +15,7 @@ final class Init {
 	public static function get_services() {
 		return [
 			Admin\AdminHooks::class,
+			Api\PricingPlanController::class,
 			// Add more service classes here
 		];
 	}

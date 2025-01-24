@@ -32,22 +32,16 @@ if (class_exists('Pricing_Plan\\Init')) {
 }
 
 /**
- * Register activation and deactivation hooks
+ * Register activation hook
  */
-register_activation_hook(__FILE__, function() {
-	if (!class_exists('Pricing_Plan\Base\Activate')) {
-		Pricing_Plan\Base\Activate::activate();
-	}
-});
+register_activation_hook(__FILE__, ['Pricing_Plan\\Base\\Activate', 'activate']);
 
-register_deactivation_hook(__FILE__, function() {
-	if (!class_exists('Pricing_Plan\Base\Deactivate')) {
-		Pricing_Plan\Base\Deactivate::deactivate();
-	}
-});
+/**
+ * Register deactivation hook
+ */
+register_deactivation_hook(__FILE__, ['Pricing_Plan\\Base\\Deactivate', 'deactivate']);
 
-register_uninstall_hook(__FILE__, function() {
-	if (!class_exists('Pricing_Plan\Base\Uninstall')) {
-		Pricing_Plan\Base\Uninstall::uninstall();
-	}
-});
+/**
+ * Register uninstall hook
+ */
+register_uninstall_hook(__FILE__, ['Pricing_Plan\\Base\\Uninstall', 'uninstall']);

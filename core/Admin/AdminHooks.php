@@ -38,15 +38,20 @@ class AdminHooks
 	 *
 	 * @return void
 	 */
-	public function enqueue_scripts()
+	public function enqueue_scripts($hook)
 	{
+		// Only load on our plugin pages
+		if (strpos($hook, 'pricing-plan') === false) {
+			return;
+		}
+
 		// Add version and dependencies
 		$asset_file = include PRICING_PLAN_PLUGIN_PATH . 'build/index.asset.php';
 		
 		wp_enqueue_script(
 			'pricing-plan-admin-script',
 			PRICING_PLAN_PLUGIN_URL . 'build/index.js',
-			$asset_file['dependencies'],
+			array_merge($asset_file['dependencies'], ['wp-api']),
 			$asset_file['version'],
 			true
 		);
@@ -58,6 +63,12 @@ class AdminHooks
 			array(),
 			$asset_file['version']
 		);
+
+		// Localize script
+		wp_localize_script('pricing-plan-admin-script', 'pricingPlanData', array(
+			'nonce' => wp_create_nonce('wp_rest'),
+			'apiUrl' => rest_url('pricing-plan/v1'),
+		));
 	}
 
 	/**
@@ -67,6 +78,7 @@ class AdminHooks
 	 */
 	public function add_admin_page()
 	{
+		// Main menu
 		add_menu_page(
 			__('Pricing Plan', 'pricing-plan'),
 			__('Pricing Plan', 'pricing-plan'),
@@ -75,16 +87,6 @@ class AdminHooks
 			array($this, 'render_admin_page'),
 			'dashicons-money-alt',
 			25
-		);
-
-		// Add submenu pages
-		add_submenu_page(
-			'pricing-plan',
-			__('All Plans', 'pricing-plan'),
-			__('All Plans', 'pricing-plan'),
-			'manage_options',
-			'pricing-plan',
-			array($this, 'render_admin_page')
 		);
 	}
 
@@ -95,9 +97,6 @@ class AdminHooks
 	 */
 	public function render_admin_page()
 	{
-		echo '<div class="wrap">';
-		echo '<h1>' . esc_html(get_admin_page_title()) . '</h1>';
 		echo '<div id="pricing-plan-admin-root"></div>';
-		echo '</div>';
 	}
 }

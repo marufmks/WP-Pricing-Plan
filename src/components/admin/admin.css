@@ -1,0 +1,701 @@
+/* Admin App Layout */
+.pricing-plan-admin-wrapper .admin-app {
+    display: flex;
+    min-height: calc(100vh - 32px);
+    background: #f0f2f5;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Sidebar Styles */
+.pricing-plan-admin-wrapper .sidebar {
+    width: 260px;
+    background: #fff;
+    color: #1d2327;
+    flex-shrink: 0;
+    box-shadow: 1px 0 3px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+}
+
+/* Plugin Header */
+.pricing-plan-admin-wrapper .plugin-header {
+    padding: 20px;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.pricing-plan-admin-wrapper .logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pricing-plan-admin-wrapper .logo-icon {
+    font-size: 24px;
+}
+
+.pricing-plan-admin-wrapper .plugin-header h2 {
+    color: #1d2327;
+    font-size: 1.4em;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+
+/* Sidebar Navigation */
+.pricing-plan-admin-wrapper .sidebar-nav {
+    padding: 12px 0;
+    flex-grow: 1;
+}
+
+.pricing-plan-admin-wrapper .menu-item-wrapper {
+    position: relative;
+    margin: 4px 0;
+}
+
+.pricing-plan-admin-wrapper .nav-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    box-shadow: none;
+    outline: none;  
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 6px;
+}
+
+.pricing-plan-admin-wrapper .nav-item:hover {
+    background: #f8fafc;
+    color: #2271b1;
+    border: none;
+    box-shadow: none;   
+}
+
+.pricing-plan-admin-wrapper .nav-item.active {
+    background: #eef2ff;
+    color: #2271b1;
+    font-weight: 500;
+    border: none;
+    box-shadow: none;   
+}
+
+.pricing-plan-admin-wrapper .nav-item .icon {
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+}
+
+.pricing-plan-admin-wrapper .nav-item .label {
+    flex-grow: 1;
+}
+
+/* Submenu Styles */
+.pricing-plan-admin-wrapper .submenu-arrow {
+    margin-left: 8px;
+    transition: transform 0.2s ease;
+    color: inherit;
+}
+
+.pricing-plan-admin-wrapper .submenu-arrow.expanded {
+    transform: rotate(180deg);
+}
+
+.pricing-plan-admin-wrapper .submenu {
+    margin: 4px 0;
+    background: transparent;
+    overflow: hidden;
+}
+
+.pricing-plan-admin-wrapper .submenu .nav-item {
+    padding-left: 52px;
+    font-size: 13px;
+    margin-left: 8px;
+    opacity: 0.9;
+}
+
+.pricing-plan-admin-wrapper .submenu .nav-item:hover {
+    opacity: 1;
+}
+
+/* Sidebar Footer */
+.pricing-plan-admin-wrapper .sidebar-footer {
+    padding: 16px 20px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 12px;
+    color: #64748b;
+    text-align: center;
+}
+
+/* Content Area */
+.pricing-plan-admin-wrapper .content-area {
+    flex: 1;
+    padding: 24px;
+    overflow-x: auto;
+    background: #f0f2f5;
+}
+
+/* Card Styles */
+.pricing-plan-admin-wrapper .card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+/* Table Styles */
+.pricing-plan-admin-wrapper .wp-list-table {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.pricing-plan-admin-wrapper .wp-list-table th {
+    font-weight: 600;
+    color: #1d2327;
+    padding: 16px;
+}
+
+.pricing-plan-admin-wrapper .wp-list-table td {
+    padding: 16px;
+    vertical-align: middle;
+}
+
+/* Form Styles */
+.pricing-plan-admin-wrapper .pricing-plan-form {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.pricing-plan-admin-wrapper .form-table th {
+    padding: 20px 10px 20px 0;
+    width: 200px;
+}
+
+.pricing-plan-admin-wrapper .form-table td {
+    padding: 15px 10px;
+}
+
+/* Button Styles */
+.pricing-plan-admin-wrapper .button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pricing-plan-admin-wrapper .button-primary {
+    background: #2271b1;
+    border-color: #2271b1;
+    color: #fff;
+}
+
+.pricing-plan-admin-wrapper .button-primary:hover {
+    background: #135e96;
+    border-color: #135e96;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 782px) {
+    .pricing-plan-admin-wrapper .admin-app {
+        flex-direction: column;
+    }
+
+    .pricing-plan-admin-wrapper .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .pricing-plan-admin-wrapper .content-area {
+        padding: 16px;
+    }
+
+    .pricing-plan-admin-wrapper .form-table th {
+        width: 100%;
+        display: block;
+        padding-bottom: 0;
+    }
+
+    .pricing-plan-admin-wrapper .form-table td {
+        width: 100%;
+        display: block;
+        padding-top: 8px;
+    }
+
+    .pricing-plan-admin-wrapper .wp-list-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* Dashboard Stats */
+.pricing-plan-admin-wrapper .dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.pricing-plan-admin-wrapper .stat-card {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.pricing-plan-admin-wrapper .stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.pricing-plan-admin-wrapper .stat-number {
+    font-size: 2.4em;
+    font-weight: 600;
+    color: #2271b1;
+    margin: 12px 0;
+}
+
+/* Loading and Error States */
+.pricing-plan-admin-wrapper .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: #64748b;
+}
+
+.pricing-plan-admin-wrapper .notice-error {
+    background: #fff;
+    border-left: 4px solid #d63638;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 16px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Status Indicators */
+.pricing-plan-admin-wrapper .status-draft,
+.pricing-plan-admin-wrapper .status-publish {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.pricing-plan-admin-wrapper .status-draft {
+    background: #ddd;
+    color: #666;
+}
+
+.pricing-plan-admin-wrapper .status-publish {
+    background: #00a32a;
+    color: #fff;
+}
+
+/* Table Styles */
+.pricing-plan-admin-wrapper .wp-list-table .row-actions {
+    visibility: hidden;
+    font-size: 12px;
+    color: #666;
+    padding: 2px 0;
+}
+
+.pricing-plan-admin-wrapper .wp-list-table tr:hover .row-actions {
+    visibility: visible;
+}
+
+.pricing-plan-admin-wrapper .wp-list-table .row-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d2327;
+    text-decoration: none;
+}
+
+.pricing-plan-admin-wrapper .wp-list-table .row-title:hover {
+    color: #2271b1;
+}
+
+.pricing-plan-admin-wrapper .submitdelete {
+    color: #b32d2e;
+    text-decoration: none;
+}
+
+.pricing-plan-admin-wrapper .submitdelete:hover {
+    color: #d63638;
+}
+
+/* No Items Message */
+.pricing-plan-admin-wrapper .no-items {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.pricing-plan-admin-wrapper .no-items a {
+    color: #2271b1;
+    text-decoration: none;
+}
+
+.pricing-plan-admin-wrapper .no-items a:hover {
+    color: #135e96;
+}
+
+/* Plans List */
+.pricing-plan-admin-wrapper .plans-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.pricing-plan-admin-wrapper .add-plan-btn {
+    background: #2271b1;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pricing-plan-admin-wrapper .plans-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.pricing-plan-admin-wrapper .plan-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.pricing-plan-admin-wrapper .plan-card .price {
+    font-size: 1.5em;
+    color: #2271b1;
+    margin: 10px 0;
+}
+
+.pricing-plan-admin-wrapper .actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.pricing-plan-admin-wrapper .edit-btn, .pricing-plan-admin-wrapper .delete-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pricing-plan-admin-wrapper .edit-btn {
+    background: #2271b1;
+    color: white;
+}
+
+.pricing-plan-admin-wrapper .delete-btn {
+    background: #dc3232;
+    color: white;
+}
+
+/* Settings Form */
+.pricing-plan-admin-wrapper .settings-form {
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.pricing-plan-admin-wrapper .form-group {
+    margin-bottom: 20px;
+}
+
+.pricing-plan-admin-wrapper .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.pricing-plan-admin-wrapper .form-group input,
+.pricing-plan-admin-wrapper .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.pricing-plan-admin-wrapper .save-settings-btn {
+    background: #2271b1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Plans Container */
+.pricing-plan-admin-wrapper .plans-container {
+    padding: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pricing-plan-admin-wrapper .plans-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.pricing-plan-admin-wrapper .plans-title h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d2327;
+    margin: 0 0 8px 0;
+}
+
+.pricing-plan-admin-wrapper .plans-subtitle {
+    color: #646970;
+    margin: 0;
+}
+
+.pricing-plan-admin-wrapper .add-plan-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #2271b1;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.pricing-plan-admin-wrapper .add-plan-button:hover {
+    background: #135e96;
+    transform: translateY(-1px);
+}
+
+/* Plans Grid */
+.pricing-plan-admin-wrapper .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+/* Plan Card */
+.pricing-plan-admin-wrapper .plan-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+.pricing-plan-admin-wrapper .plan-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.pricing-plan-admin-wrapper .plan-card-header {
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pricing-plan-admin-wrapper .plan-card-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.pricing-plan-admin-wrapper .plan-status {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.pricing-plan-admin-wrapper .status-draft {
+    background: #f0f0f0;
+    color: #646970;
+}
+
+.pricing-plan-admin-wrapper .status-publish {
+    background: #dcf5e2;
+    color: #00a32a;
+}
+
+.pricing-plan-admin-wrapper .plan-card-content {
+    padding: 20px;
+}
+
+.pricing-plan-admin-wrapper .plan-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.pricing-plan-admin-wrapper .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #646970;
+    font-size: 13px;
+}
+
+.pricing-plan-admin-wrapper .plan-description {
+    color: #1d2327;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.pricing-plan-admin-wrapper .plan-card-actions {
+    padding: 16px 20px;
+    background: #f9fafb;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    gap: 12px;
+}
+
+.pricing-plan-admin-wrapper .edit-button,
+.pricing-plan-admin-wrapper .delete-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.pricing-plan-admin-wrapper .edit-button {
+    background: #f0f0f0;
+    color: #1d2327;
+    border: none;
+}
+
+.pricing-plan-admin-wrapper .edit-button:hover {
+    background: #e0e0e0;
+}
+
+.pricing-plan-admin-wrapper .delete-button {
+    background: #fff0f0;
+    color: #d63638;
+    border: none;
+}
+
+.pricing-plan-admin-wrapper .delete-button:hover {
+    background: #ffebeb;
+}
+
+/* Empty State */
+.pricing-plan-admin-wrapper .empty-plans {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 48px;
+    text-align: center;
+}
+
+.pricing-plan-admin-wrapper .empty-plans-content {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.pricing-plan-admin-wrapper .empty-plans svg {
+    color: #646970;
+    margin-bottom: 16px;
+}
+
+.pricing-plan-admin-wrapper .empty-plans h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1d2327;
+    margin: 0 0 8px 0;
+}
+
+.pricing-plan-admin-wrapper .empty-plans p {
+    color: #646970;
+    margin: 0 0 24px 0;
+}
+
+/* Loading State */
+.pricing-plan-admin-wrapper .plans-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    color: #646970;
+}
+
+.pricing-plan-admin-wrapper .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #2271b1;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 782px) {
+    .pricing-plan-admin-wrapper .plans-container {
+        padding: 16px;
+    }
+
+    .pricing-plan-admin-wrapper .plans-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .pricing-plan-admin-wrapper .plans-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-plan-admin-wrapper .empty-plans {
+        padding: 32px 16px;
+    }
+} 
