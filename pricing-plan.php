@@ -20,8 +20,8 @@ if (!defined('WPINC')) {
 }
 
 // Require once the Composer autoload
-if (file_exists(dirname(__FILE__) . '/lib/autoload.php')) {
-    require_once dirname(__FILE__) . '/lib/autoload.php';
+if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
+    require_once dirname(__FILE__) . '/vendor/autoload.php';
 }
 
 /**

@@ -18,7 +18,7 @@
         "lint:fix":"phpcbf"
     },
     "config": {
-        "vendor-dir": "lib",
+        "vendor-dir": "vendor",
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
         }
